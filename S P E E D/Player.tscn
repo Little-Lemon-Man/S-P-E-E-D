@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwh5btv1w70vk"]
+
+[ext_resource type="Script" path="res://Temp1.gd" id="1_dcmvu"]
+[ext_resource type="Texture2D" uid="uid://01v5hbhbjrg1" path="res://CIRCLE_WITH_OUTLINE.png" id="2_eeic5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ibpf6"]
+radius = 9.89494
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_dcmvu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.19209e-07, -1.86333e-09)
+scale = Vector2(9.40092, 9.44015)
+shape = SubResource("CircleShape2D_ibpf6")
+
+[node name="Circle" type="Sprite2D" parent="."]
+position = Vector2(-1.66893e-06, -1.0848e-05)
+scale = Vector2(0.599469, 0.599469)
+texture = ExtResource("2_eeic5")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]

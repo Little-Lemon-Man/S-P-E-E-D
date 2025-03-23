@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bq74wg1slc24w"]
+
+[node name="Node2D" type="Node2D"]
+metadata/_edit_vertical_guides_ = [-149.0]
+
+[node name="Skeleton2D" type="Skeleton2D" parent="."]
+visible = false
+
+[node name="Tailbone" type="Bone2D" parent="Skeleton2D"]
+
+[node name="Low Spine" type="Bone2D" parent="Skeleton2D/Tailbone"]
+
+[node name="Up Spine" type="Bone2D" parent="Skeleton2D/Tailbone/Low Spine"]
+position = Vector2(0, -18)
+
+[node name="Shoulders" type="Bone2D" parent="Skeleton2D/Tailbone/Low Spine/Up Spine"]
+position = Vector2(-1.90735e-06, -17)
+scale = Vector2(3.05596, -0.694655)
+
+[node name="Up Front Arm" type="Bone2D" parent="Skeleton2D/Tailbone/Low Spine/Up Spine/Shoulders"]
+
+[node name="Lower Front Arm" type="Bone2D" parent="Skeleton2D/Tailbone/Low Spine/Up Spine/Shoulders/Up Front Arm"]
+position = Vector2(5, -12)
+scale = Vector2(0.6, 0.6)
+
+[node name="Front Hand" type="Bone2D" parent="Skeleton2D/Tailbone/Low Spine/Up Spine/Shoulders/Up Front Arm/Lower Front Arm"]
+position = Vector2(3, -35)
+scale = Vector2(0.1, 1)
+
+[node name="Up Back Arm" type="Bone2D" parent="Skeleton2D/Tailbone/Low Spine/Up Spine/Shoulders"]
+
+[node name="Lower Back Arm" type="Bone2D" parent="Skeleton2D/Tailbone/Low Spine/Up Spine/Shoulders/Up Back Arm"]
+position = Vector2(-5, -12)
+scale = Vector2(0.6, 0.6)
+
+[node name="Back Hand" type="Bone2D" parent="Skeleton2D/Tailbone/Low Spine/Up Spine/Shoulders/Up Back Arm/Lower Back Arm"]
+position = Vector2(-3, -35)
+scale = Vector2(0.1, 1)
+
+[node name="Up Front Leg" type="Bone2D" parent="Skeleton2D/Tailbone"]
+
+[node name="Lower Front Leg" type="Bone2D" parent="Skeleton2D/Tailbone/Up Front Leg"]
+position = Vector2(15, 10)
+
+[node name="Bone2D" type="Bone2D" parent="Skeleton2D/Tailbone/Up Front Leg/Lower Front Leg"]
+position = Vector2(1, 20)
+scale = Vector2(0.1, 1)
+
+[node name="Up Front Leg" type="Bone2D" parent="Skeleton2D/Tailbone/Up Front Leg"]
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="Lower Front Leg" type="Bone2D" parent="Skeleton2D/Tailbone/Up Front Leg/Up Front Leg"]
+position = Vector2(15, 10)
+
+[node name="Bone2D" type="Bone2D" parent="Skeleton2D/Tailbone/Up Front Leg/Up Front Leg/Lower Front Leg"]
+position = Vector2(1, 20)
+rotation = 0.00145314
+scale = Vector2(0.1, 0.1)
