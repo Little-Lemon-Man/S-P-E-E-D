@@ -41,7 +41,7 @@ func _physics_process(delta):
 		if  abs(velocity.x) < 2*SPEED_SOFT:
 			friction = (int(abs(velocity.x))^2)/10
 			print(velocity.x)
-		if abs(velocity.x) < 15:
+		if abs(velocity.x) < SPEED_SOFT/5:
 			friction = 1
 	
 	velocity.x = move_toward(velocity.x,0,friction)
@@ -50,7 +50,8 @@ func _physics_process(delta):
 		_sword_swing()
 		emit_signal("AttackTimer")
 		attack_cooldown = true
-	
+	globals.PLAYER_POSITION = position
+	globals.PLAYER_VELOCITY = velocity
 	move_and_slide()
 
 func _sword_swing():
