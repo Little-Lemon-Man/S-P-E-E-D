@@ -7,8 +7,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ibpf6"]
 radius = 9.89494
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Body" type="CharacterBody2D"]
+scale = Vector2(0.146334, 0.146334)
 script = ExtResource("1_dcmvu")
+metadata/_edit_horizontal_guides_ = [-274.0]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.19209e-07, -1.86333e-09)
@@ -24,6 +26,9 @@ texture = ExtResource("2_eeic5")
 script = ExtResource("3_0npv3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
 
 [connection signal="AttackTimer" from="." to="Timer" method="_on_character_body_2d_attack_timer"]
 [connection signal="timeout" from="Timer" to="." method="_on_attack_timer_timeout"]
