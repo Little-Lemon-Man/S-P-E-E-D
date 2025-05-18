@@ -8,11 +8,13 @@ const AIR_ADJUST = 0.05 #how much you can adjust your speed mid-air
 const AIR_FRICTION = 50 #inverse, bigger number means less speed loss
 const GROUND_FRICTION = 5 #inverse, bigger number means less speed loss
 const SWING_SPEED = 250
+const GRAPPLE_LENGTH = 100
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var step = 1
 var friction = 1
 var attack_cooldown = false
+var toward_mouse = Vector2(0,0)
 
 signal AttackTimer
 
@@ -40,7 +42,6 @@ func _physics_process(delta):
 	else:
 		if  abs(velocity.x) < 2*SPEED_SOFT:
 			friction = (int(abs(velocity.x))^2)/10
-			print(velocity.x)
 		if abs(velocity.x) < SPEED_SOFT/5:
 			friction = 1
 	
@@ -50,14 +51,32 @@ func _physics_process(delta):
 		_sword_swing()
 		emit_signal("AttackTimer")
 		attack_cooldown = true
+	if Input.is_action_pressed("Grapple"):
+		_grapple()
 	globals.PLAYER_POSITION = position
 	globals.PLAYER_VELOCITY = velocity
 	move_and_slide()
 
 func _sword_swing():
-	var toward_mouse = get_global_mouse_position() - position
+	toward_mouse = get_global_mouse_position() - position
+	print(toward_mouse.angle())
+	$Area2D.rotation = toward_mouse.angle()
 	var swing = Vector2(SWING_SPEED,0).rotated(toward_mouse.angle())
 	velocity += swing
+	$Area2D.show()
 
 func _on_attack_timer_timeout():
 	attack_cooldown = false
+
+
+func _grapple():
+	toward_mouse = get_global_mouse_position() - position
+	var grapple = Vector2(GRAPPLE_LENGTH,0).rotated(toward_mouse.angle())
+	var space_state = get_world_2d().direct_space_state
+	var query = PhysicsRayQueryParameters2D.create(position, position+grapple)
+	var result = space_state.intersect_ray(query)
+	print(result)
+
+
+func _on_attack_hitbox_timeout() -> void:
+	$Area2D.hide()

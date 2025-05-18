@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://duolj72xnpvya"]
+
+[ext_resource type="Script" uid="uid://d073hjagxghkv" path="res://Grapple.gd" id="1_53pol"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="."]
+node_a = NodePath("../StaticBody2D")
+script = ExtResource("1_53pol")

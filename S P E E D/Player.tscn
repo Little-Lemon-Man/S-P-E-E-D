@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwh5btv1w70vk"]
+[gd_scene load_steps=7 format=3 uid="uid://dwh5btv1w70vk"]
 
-[ext_resource type="Script" path="res://Temp1.gd" id="1_dcmvu"]
+[ext_resource type="Script" uid="uid://gcwkgf8c3drp" path="res://Temp1.gd" id="1_dcmvu"]
 [ext_resource type="Texture2D" uid="uid://01v5hbhbjrg1" path="res://CIRCLE_WITH_OUTLINE.png" id="2_eeic5"]
-[ext_resource type="Script" path="res://AttackCooldown.gd" id="3_0npv3"]
+[ext_resource type="Script" uid="uid://dbcj2ev6c4d7h" path="res://AttackCooldown.gd" id="3_0npv3"]
+[ext_resource type="Script" uid="uid://c3h8dwsnuo3l4" path="res://attack_hitbox_timer.gd" id="4_cxr5p"]
+[ext_resource type="Script" uid="uid://c8yqigbl63bq7" path="res://Camera.gd" id="4_k26da"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ibpf6"]
 radius = 9.89494
@@ -23,12 +25,35 @@ scale = Vector2(0.599469, 0.599469)
 texture = ExtResource("2_eeic5")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
 script = ExtResource("3_0npv3")
 
+[node name="AttackHitbox" type="Timer" parent="."]
+wait_time = 0.1
+script = ExtResource("4_cxr5p")
+
 [node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_right = 3456
+limit_bottom = 1944
+limit_smoothed = true
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+drag_left_margin = 0.0
+drag_top_margin = 0.0
+drag_right_margin = 0.0
+drag_bottom_margin = 0.0
+script = ExtResource("4_k26da")
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(0, 0, 382.686, -382.686, 437.356, -328.017, 492.025, -218.678, 546.695, 0, 492.025, 218.678, 437.356, 328.017, 382.686, 382.686)
 
 [connection signal="AttackTimer" from="." to="Timer" method="_on_character_body_2d_attack_timer"]
+[connection signal="AttackTimer" from="." to="AttackHitbox" method="_on_body_attack_timer"]
 [connection signal="timeout" from="Timer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="AttackHitbox" to="." method="_on_attack_hitbox_timeout"]

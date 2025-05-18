@@ -1,7 +1,7 @@
 extends Camera2D
-var Player_Old = Vector2(0,0)
 
-func _process(delta):
-	global_position = Player_Old
-	Player_Old = globals.PLAYER_POSITION
-	
+func _process(_delta):
+	limit_top = globals.CAM_UP
+	limit_bottom = globals.CAM_DOWN
+	limit_left = globals.CAM_LEFT
+	limit_right = globals.CAM_RIGHT
