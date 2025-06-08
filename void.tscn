@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7bfq2d75loig"]
+
+[ext_resource type="PackedScene" uid="uid://brqo7w5ipae16" path="res://Player2.tscn" id="1_u8be3"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u8be3"]
+friction = 2.0
+rough = true
+absorbent = true
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player2" parent="." instance=ExtResource("1_u8be3")]
+z_index = 1
+position = Vector2(96, 56)
+physics_material_override = SubResource("PhysicsMaterial_u8be3")

@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcol28yi80rdh"]
+
+[ext_resource type="Script" uid="uid://b4xy8e7bjywpc" path="res://falling_celing.gd" id="1_r463w"]
+[ext_resource type="Script" uid="uid://dcbbyie3uj8g1" path="res://wait.gd" id="2_m2050"]
+
+[node name="Falling Ceiling" type="RigidBody2D"]
+mass = 100000.0
+gravity_scale = 0.0
+center_of_mass_mode = 1
+center_of_mass = Vector2(416, 153)
+inertia = 1e+06
+angular_damp = 100.0
+script = ExtResource("1_r463w")
+metadata/_edit_vertical_guides_ = [416.0]
+metadata/_edit_horizontal_guides_ = [152.0]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(128, 160, 272, 208, 432, 224, 592, 208, 672, 160, 752, 152, 752, 168, 744, 296, 672, 304, 592, 360, 416, 392, 336, 352, 248, 336, 168, 312, 120, 288, 112, 168)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(128, 160, 112, 152, 48, 168, 112, 168)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(752, 168, 832, 168, 752, 152)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+script = ExtResource("2_m2050")
+
+[connection signal="wait" from="." to="Timer" method="_on_rigid_body_2d_wait"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

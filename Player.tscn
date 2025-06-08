@@ -1,0 +1,181 @@
+[gd_scene load_steps=19 format=3 uid="uid://dwh5btv1w70vk"]
+
+[ext_resource type="Script" uid="uid://gcwkgf8c3drp" path="res://Temp1.gd" id="1_dcmvu"]
+[ext_resource type="Texture2D" uid="uid://01v5hbhbjrg1" path="res://CIRCLE_WITH_OUTLINE.png" id="2_eeic5"]
+[ext_resource type="Script" uid="uid://dbcj2ev6c4d7h" path="res://AttackCooldown.gd" id="3_0npv3"]
+[ext_resource type="Script" uid="uid://c3h8dwsnuo3l4" path="res://attack_hitbox_timer.gd" id="4_cxr5p"]
+[ext_resource type="Script" uid="uid://c8yqigbl63bq7" path="res://Camera.gd" id="4_k26da"]
+[ext_resource type="Script" uid="uid://mbdem844163i" path="res://Sword.gd" id="6_dtqjt"]
+[ext_resource type="Script" uid="uid://ck0nxwonxosb6" path="res://attack_hitbox.gd" id="6_r3kul"]
+[ext_resource type="Texture2D" uid="uid://bbf0y4xjcqoc3" path="res://sward.svg" id="7_l6ohk"]
+[ext_resource type="Script" uid="uid://0u25ducpey85" path="res://tim.gd" id="8_5ncpa"]
+[ext_resource type="Texture2D" uid="uid://b3imeqp2afyiu" path="res://Chestt.webp" id="9_l6ohk"]
+[ext_resource type="Texture2D" uid="uid://buntmjf3qv0la" path="res://hand_for_armour_2.webp" id="9_oudfo"]
+[ext_resource type="Texture2D" uid="uid://ceuxrkwrjkjng" path="res://fingers_for_armour_2.webp" id="10_d6rpx"]
+[ext_resource type="Texture2D" uid="uid://oauemgitbbm" path="res://Helmet.webp" id="10_oudfo"]
+[ext_resource type="Texture2D" uid="uid://dhjht4djrlgw1" path="res://hand for armour back.svg" id="10_r3kul"]
+[ext_resource type="Script" uid="uid://bj4k6wr0sud4a" path="res://hitbox.gd" id="15_jatw7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ibpf6"]
+radius = 273.588
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oudfo"]
+radius = 96.4469
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r3kul"]
+radius = 23.3918
+
+[node name="Body" type="CharacterBody2D"]
+scale = Vector2(0.342, 0.342)
+collision_layer = 32897
+collision_mask = 32897
+script = ExtResource("1_dcmvu")
+metadata/_edit_horizontal_guides_ = [-274.0]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.19209e-07, -1.86333e-09)
+scale = Vector2(0.342, 0.342)
+shape = SubResource("CircleShape2D_ibpf6")
+
+[node name="Circle" type="Sprite2D" parent="."]
+position = Vector2(7.15256e-07, -8.34465e-06)
+scale = Vector2(0.620472, 0.620472)
+texture = ExtResource("2_eeic5")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+script = ExtResource("3_0npv3")
+
+[node name="AttackHitbox" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+script = ExtResource("4_cxr5p")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.342, 0.342)
+limit_left = 0
+limit_top = 0
+limit_right = 3456
+limit_bottom = 1944
+limit_smoothed = true
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.0
+drag_top_margin = 0.0
+drag_right_margin = 0.0
+drag_bottom_margin = 0.0
+script = ExtResource("4_k26da")
+
+[node name="SwordHitbox" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("6_r3kul")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SwordHitbox"]
+polygon = PackedVector2Array(0, 0, 0, -538.012, 210.526, -491.228, 374.269, -397.661, 397.661, -374.269, 492.025, -218.678, 546.695, 0, 492.025, 218.678, 397.661, 374.269, 374.269, 397.661, 210.526, 491.228, 0, 538.012)
+
+[node name="Node2D" type="Node2D" parent="."]
+scale = Vector2(0.342, 0.342)
+script = ExtResource("6_dtqjt")
+
+[node name="Sword" type="Sprite2D" parent="Node2D"]
+position = Vector2(820.765, 0)
+rotation = -1.57079
+scale = Vector2(0.35, -0.35)
+
+[node name="Polygon2D" type="Polygon2D" parent="Node2D/Sword"]
+texture_repeat = 1
+position = Vector2(-205.558, -246.313)
+texture = ExtResource("9_oudfo")
+polygon = PackedVector2Array(479.146, 793.49, 68.7639, 793.49, 68.7639, 383.108, 479.146, 383.108)
+
+[node name="Sward" type="Sprite2D" parent="Node2D/Sword"]
+position = Vector2(-43.1151, -417.304)
+scale = Vector2(1.1001, 1.1001)
+texture = ExtResource("7_l6ohk")
+
+[node name="FingersForArmour2" type="Sprite2D" parent="Node2D/Sword"]
+position = Vector2(-0.366821, 95.6735)
+texture = ExtResource("10_d6rpx")
+
+[node name="Polygon2D2" type="Polygon2D" parent="Node2D/Sword"]
+texture_repeat = 1
+position = Vector2(-273.955, 27.2761)
+scale = Vector2(0.584748, 0.584748)
+texture = ExtResource("10_r3kul")
+polygon = PackedVector2Array(136.794, 752.368, 889.163, 752.368, 889.163, 1299.55, 136.794, 1299.55)
+
+[node name="Timer" type="Timer" parent="Node2D"]
+wait_time = 0.2
+script = ExtResource("8_5ncpa")
+
+[node name="Node2D2" type="Node2D" parent="."]
+
+[node name="Chestt" type="Sprite2D" parent="Node2D2"]
+position = Vector2(-20.0983, 42.6488)
+scale = Vector2(0.274043, 0.274043)
+texture = ExtResource("9_l6ohk")
+flip_h = true
+
+[node name="Helmet" type="Sprite2D" parent="Node2D2"]
+position = Vector2(-20.0983, -99.8433)
+scale = Vector2(0.361119, 0.361119)
+texture = ExtResource("10_oudfo")
+flip_h = true
+
+[node name="Hitbox" type="Area2D" parent="." node_paths=PackedStringArray("body")]
+collision_layer = 524288
+collision_mask = 524288
+script = ExtResource("15_jatw7")
+body = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_oudfo")
+
+[node name="Foot_1" type="RigidBody2D" parent="."]
+position = Vector2(-46.7836, 280.702)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foot_1"]
+shape = SubResource("CircleShape2D_r3kul")
+
+[node name="Leg_1" type="DampedSpringJoint2D" parent="."]
+position = Vector2(-46.7836, 1.90735e-06)
+node_a = NodePath("..")
+node_b = NodePath("../Foot_1")
+length = 96.0
+rest_length = 96.0
+stiffness = 64.0
+damping = 2.0
+
+[node name="Foot_2" type="RigidBody2D" parent="."]
+position = Vector2(46.7836, 280.702)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foot_2"]
+shape = SubResource("CircleShape2D_r3kul")
+
+[node name="Leg_2" type="DampedSpringJoint2D" parent="."]
+position = Vector2(46.7836, 1.13687e-13)
+node_a = NodePath("..")
+node_b = NodePath("../Foot_2")
+length = 96.0
+rest_length = 96.0
+stiffness = 64.0
+damping = 2.0
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="."]
+position = Vector2(-46.7836, 280.702)
+node_a = NodePath("../Foot_1")
+node_b = NodePath("../Foot_2")
+length = 32.0
+rest_length = 32.0
+stiffness = 64.0
+
+[connection signal="AttackTimer" from="." to="Timer" method="_on_character_body_2d_attack_timer"]
+[connection signal="AttackTimer" from="." to="AttackHitbox" method="_on_body_attack_timer"]
+[connection signal="Swing" from="." to="Node2D" method="_on_body_swing"]
+[connection signal="timeout" from="Timer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="AttackHitbox" to="." method="_on_attack_hitbox_timeout"]
+[connection signal="Swing_Has_Swung" from="Node2D" to="." method="_on_node_2d_swing_has_swung"]
+[connection signal="timeout" from="Node2D/Timer" to="Node2D" method="_on_timer_timeout"]
