@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://qoq58vtebxll"]
+
+[ext_resource type="Script" uid="uid://bj4k6wr0sud4a" path="res://hitbox.gd" id="1_mauhj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mauhj"]
+radius = 96.4469
+
+[node name="Zombie" type="CharacterBody2D"]
+
+[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("body")]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_mauhj")
+body = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_mauhj")

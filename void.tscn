@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7bfq2d75loig"]
+
+[ext_resource type="PackedScene" uid="uid://brqo7w5ipae16" path="res://Player2.tscn" id="1_u8be3"]
+[ext_resource type="PackedScene" uid="uid://cdcircat1fadr" path="res://Player3.tscn" id="2_ykt71"]
+[ext_resource type="PackedScene" uid="uid://y1j701umnicf" path="res://Player4.tscn" id="3_0uet8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_u8be3"]
+friction = 2.0
+rough = true
+absorbent = true
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0uet8"]
+radius = 4.0
+height = 23.9998
+
+[node name="Node2D" type="Node2D"]
+
+[node name="RigidBody2D" parent="." instance=ExtResource("2_ykt71")]
+z_index = 1000
+position = Vector2(7624, 1152)
+
+[node name="Player2" parent="." instance=ExtResource("1_u8be3")]
+z_index = 1
+position = Vector2(96, 56)
+physics_material_override = SubResource("PhysicsMaterial_u8be3")
+
+[node name="Body" parent="." instance=ExtResource("3_0uet8")]
+z_index = 1000
+position = Vector2(7544, 944)
+
+[node name="Foot_1" type="RigidBody2D" parent="."]
+position = Vector2(-46.7836, 7.62939e-05)
+scale = Vector2(2.924, 2.924)
+collision_layer = 4194304
+collision_mask = 4194305
+mass = 20.0
+gravity_scale = 2.0
+center_of_mass_mode = 1
+center_of_mass = Vector2(0, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foot_1"]
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_0uet8")
+
+[node name="Foot_2" type="RigidBody2D" parent="."]
+position = Vector2(46.7836, 7.62939e-05)
+scale = Vector2(2.924, 2.924)
+collision_layer = 4194304
+collision_mask = 4194305
+mass = 20.0
+gravity_scale = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foot_2"]
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_0uet8")
