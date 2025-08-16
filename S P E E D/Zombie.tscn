@@ -1,0 +1,102 @@
+[gd_scene load_steps=9 format=3 uid="uid://qoq58vtebxll"]
+
+[ext_resource type="Script" uid="uid://exusmwqadbty" path="res://zombie.gd" id="1_dtdss"]
+[ext_resource type="Script" uid="uid://bj4k6wr0sud4a" path="res://hitbox.gd" id="1_mauhj"]
+[ext_resource type="Script" uid="uid://chk3hhhsswo5i" path="res://aaa.gd" id="3_dtdss"]
+[ext_resource type="Script" uid="uid://c4mto14eybsyk" path="res://swing_enemy_attack.gd" id="3_ykpkj"]
+[ext_resource type="Script" uid="uid://dy265qsq3t80t" path="res://proxy.gd" id="6_qybkj"]
+[ext_resource type="Texture2D" uid="uid://01v5hbhbjrg1" path="res://CIRCLE_WITH_OUTLINE.png" id="8_jq0ii"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mauhj"]
+radius = 56.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_18kch"]
+radius = 32.0
+height = 144.0
+
+[node name="Zombie" type="CharacterBody2D"]
+script = ExtResource("1_dtdss")
+SPEED_SOFT = 50
+fric_coef = 4.0
+
+[node name="Point1" type="Node2D" parent="."]
+position = Vector2(0, -120)
+
+[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("body")]
+position = Vector2(0, -72)
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_mauhj")
+body = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_mauhj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.45519e-11, -72)
+rotation = 3.14159
+shape = SubResource("CapsuleShape2D_18kch")
+
+[node name="Attack" type="Node2D" parent="."]
+position = Vector2(0, -88)
+script = ExtResource("3_dtdss")
+
+[node name="CircleWithOutline" type="Sprite2D" parent="Attack"]
+position = Vector2(72, 0)
+scale = Vector2(0.0424403, 0.0424403)
+texture = ExtResource("8_jq0ii")
+
+[node name="AttaHit" type="Area2D" parent="."]
+position = Vector2(0, -88)
+collision_layer = 524288
+collision_mask = 524288
+script = ExtResource("3_ykpkj")
+ko_time = 0.5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AttaHit"]
+scale = Vector2(1.30035, 1.30035)
+polygon = PackedVector2Array(0, 0, 0, -104.587, 36.9131, -98.4349, 73.8262, -73.8262, 98.4349, -36.9131, 104.587, 0, 98.4349, 36.9131, 73.8262, 73.8262, 36.9131, 98.4349, 0, 104.587)
+
+[node name="Knockout" type="Timer" parent="."]
+one_shot = true
+
+[node name="Detection" type="Area2D" parent="."]
+position = Vector2(0, -120)
+collision_layer = 0
+collision_mask = 16384
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detection"]
+scale = Vector2(2.84, 2.84)
+polygon = PackedVector2Array(0, 0, 157.746, -73.2394, 174.648, -47.8873, 183.099, -16.9014, 183.099, 16.9014, 174.648, 47.8873, 157.746, 73.2394)
+
+[node name="AttackTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AttackHitbox" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="See" type="Timer" parent="."]
+one_shot = true
+
+[node name="Flicker" type="Timer" parent="."]
+
+[node name="Proxy" type="Node2D" parent="."]
+script = ExtResource("6_qybkj")
+
+[connection signal="Swing" from="." to="Attack" method="_on_body_swing"]
+[connection signal="Swing" from="." to="AttaHit" method="_on_body_swing"]
+[connection signal="hit" from="." to="Proxy" method="_on_hit"]
+[connection signal="start" from="." to="Proxy" method="_on_start"]
+[connection signal="Swing_Has_Swung" from="Attack" to="." method="_on_swing_has_swung"]
+[connection signal="Swing_Has_Swung" from="Attack" to="AttaHit" method="_on_attack_swing_has_swung"]
+[connection signal="Swing_Has_Swung" from="Attack" to="AttaHit" method="_on_swing_has_swung"]
+[connection signal="timeout" from="Knockout" to="." method="_on_knockout_timeout"]
+[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="AttackHitbox" to="." method="_on_attack_hitbox_timeout"]
+[connection signal="timeout" from="AttackHitbox" to="AttaHit" method="_on_attack_hitbox_timeout"]
+[connection signal="timeout" from="See" to="." method="_on_see_timeout"]
+[connection signal="timeout" from="Flicker" to="." method="_on_flicker_timeout"]
+[connection signal="hit" from="Proxy" to="." method="_on_proxy_hit"]
+[connection signal="start" from="Proxy" to="." method="_on_proxy_start"]
