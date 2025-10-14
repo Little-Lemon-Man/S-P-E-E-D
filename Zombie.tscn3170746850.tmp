@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://qoq58vtebxll"]
+
+[ext_resource type="Script" uid="uid://exusmwqadbty" path="res://zombie.gd" id="1_dtdss"]
+[ext_resource type="Script" uid="uid://bj4k6wr0sud4a" path="res://hitbox.gd" id="1_mauhj"]
+[ext_resource type="Script" uid="uid://bi3uvvcjou2kn" path="res://Sword4.gd" id="2_qybkj"]
+[ext_resource type="Script" uid="uid://c4mto14eybsyk" path="res://swing_enemy_attack.gd" id="3_ykpkj"]
+[ext_resource type="Texture2D" uid="uid://01v5hbhbjrg1" path="res://CIRCLE_WITH_OUTLINE.png" id="8_jq0ii"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mauhj"]
+radius = 56.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_18kch"]
+radius = 32.0
+height = 144.0
+
+[node name="Zombie" type="CharacterBody2D"]
+script = ExtResource("1_dtdss")
+health = null
+
+[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("body")]
+position = Vector2(0, -72)
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_mauhj")
+body = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_mauhj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.45519e-11, -72)
+rotation = 3.14159
+shape = SubResource("CapsuleShape2D_18kch")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, -88)
+scale = Vector2(0.102, 0.102)
+script = ExtResource("2_qybkj")
+
+[node name="Sword" type="Sprite2D" parent="Node2D"]
+position = Vector2(820.765, 0)
+rotation = -1.57079
+scale = Vector2(0.35, -0.35)
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(0, -88)
+script = ExtResource("3_ykpkj")
+
+[node name="Attack" type="Node2D" parent="Area2D2"]
+
+[node name="CircleWithOutline" type="Sprite2D" parent="Area2D2/Attack"]
+position = Vector2(72, 0)
+scale = Vector2(0.0424403, 0.0424403)
+texture = ExtResource("8_jq0ii")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2"]
+
+[node name="Knockout" type="Timer" parent="."]
