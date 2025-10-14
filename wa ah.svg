@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="26.458334mm"
+   height="26.458334mm"
+   viewBox="0 0 100 100"
+   id="SVGRoot"
+   version="1.1"
+   enable-background="new"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="wa ah.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs4787">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="patternClipPath">
+      <rect
+         y="0"
+         x="0"
+         height="100"
+         width="100"
+         id="clipPathRect"
+         style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:#ffff00;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:20;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:1.0989;stroke-opacity:1;marker:none;enable-background:accumulate" />
+    </clipPath>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Mend"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path19572"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.625;stroke-linejoin:round;stroke-opacity:1"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="60.811183"
+     inkscape:cy="102.17693"
+     inkscape:document-units="px"
+     inkscape:current-layer="designTop"
+     showgrid="false"
+     inkscape:pagecheckerboard="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:blackoutopacity="0.0"
+     showborder="true"
+     inkscape:showpageshadow="true"
+     borderlayer="false"
+     inkscape:deskcolor="#d1d1d1" />
+  <g
+     inkscape:groupmode="layer"
+     id="patternLayer"
+     inkscape:label="Pattern"
+     style="display:inline">
+    <g
+       id="g8891"
+       sodipodi:insensitive="true">
+      <use
+         x="0"
+         y="0"
+         xlink:href="#fullPattern"
+         id="fullPatternClone"
+         transform="translate(200,-100)"
+         width="100"
+         height="100"
+         inkscape:tile-cx="50.0"
+         inkscape:tile-cy="50.0"
+         inkscape:tile-w="100"
+         inkscape:tile-h="100"
+         inkscape:tile-x0="100"
+         inkscape:tile-y0="100" />
+      <use
+         height="100%"
+         width="100%"
+         x="0"
+         y="0"
+         inkscape:tiled-clone-of="#fullPatternClone"
+         xlink:href="#fullPatternClone"
+         transform="translate(0,100)"
+         id="clonePreview1" />
+      <use
+         height="100%"
+         width="100%"
+         x="0"
+         y="0"
+         inkscape:tiled-clone-of="#fullPatternClone"
+         xlink:href="#fullPatternClone"
+         transform="translate(0,200)"
+         id="clonePreview2" />
+      <use
+         height="100%"
+         width="100%"
+         x="0"
+         y="0"
+         inkscape:tiled-clone-of="#fullPatternClone"
+         xlink:href="#fullPatternClone"
+         transform="translate(100)"
+         id="clonePreview3" />
+      <use
+         height="100%"
+         width="100%"
+         x="0"
+         y="0"
+         inkscape:tiled-clone-of="#fullPatternClone"
+         xlink:href="#fullPatternClone"
+         transform="translate(100,100)"
+         id="clonePreview4" />
+      <use
+         height="100%"
+         width="100%"
+         x="0"
+         y="0"
+         inkscape:tiled-clone-of="#fullPatternClone"
+         xlink:href="#fullPatternClone"
+         transform="translate(100,200)"
+         id="clonePreview5" />
+      <use
+         height="100%"
+         width="100%"
+         x="0"
+         y="0"
+         inkscape:tiled-clone-of="#fullPatternClone"
+         xlink:href="#fullPatternClone"
+         transform="translate(200)"
+         id="clonePreview6" />
+      <use
+         height="100%"
+         width="100%"
+         x="0"
+         y="0"
+         inkscape:tiled-clone-of="#fullPatternClone"
+         xlink:href="#fullPatternClone"
+         transform="translate(200,100)"
+         id="clonePreview7" />
+      <use
+         height="100%"
+         width="100%"
+         x="0"
+         y="0"
+         inkscape:tiled-clone-of="#fullPatternClone"
+         xlink:href="#fullPatternClone"
+         transform="translate(200,200)"
+         id="clonePreview8" />
+    </g>
+    <use
+       style="opacity:0.3"
+       height="100%"
+       width="100%"
+       id="phantomBottom"
+       xlink:href="#designBottom"
+       y="0"
+       x="0"
+       sodipodi:insensitive="true" />
+    <use
+       style="opacity:0.3"
+       height="100%"
+       width="100%"
+       id="phantomTop"
+       xlink:href="#designTop"
+       y="0"
+       x="0"
+       sodipodi:insensitive="true" />
+    <g
+       inkscape:label="Helper Layer (don't use)"
+       clip-path="url(#patternClipPath)"
+       id="fullPattern"
+       style="display:inline">
+      <g
+         inkscape:groupmode="layer"
+         id="designBottom"
+         inkscape:label="Pattern Background">
+        <rect
+           style="fill:#5b68ac;fill-opacity:1;stroke-width:3.77953;stroke-opacity:0.41844"
+           id="rect1"
+           width="100"
+           height="100"
+           x="0"
+           y="0" />
+      </g>
+      <g
+         inkscape:groupmode="layer"
+         id="designTop"
+         inkscape:label="Pattern Foreground">
+        <path
+           style="display:inline;fill:none;fill-opacity:1;stroke:#5955a8;stroke-width:3.77953;stroke-opacity:1"
+           d="m -3.25,40.75 c 0,0 6,-0.75 12.875,-1.375 6.875,-0.625 24.25,5.375 28.875,5.125 4.625,-0.25 24.25,-5.5 28.25,-6 4,-0.5 18.75,2.625 22.875,2.5 4.125,-0.125 7.398667,-0.273667 7.398667,-0.273667"
+           id="path1"
+           sodipodi:nodetypes="cssssc" />
+        <path
+           style="display:inline;fill:none;fill-opacity:1;stroke:#5955a8;stroke-width:3.77953;stroke-opacity:1"
+           d="M 38.75,44.875 C 44.125,44.25 60.875,55.25 68,57 c 7.125,1.75 23.535994,4.312742 27.875,3.419417 4.25,-0.875 12.5533,0.269607 12.5533,0.269607"
+           id="path2"
+           sodipodi:nodetypes="cssc" />
+        <path
+           style="display:inline;fill:none;fill-opacity:1;stroke:#5955a8;stroke-width:3.77953;stroke-opacity:1"
+           d="M 2.6745559,60.026808 C 7.5380582,61.118567 17.805752,67.306778 20.9375,68.625 c 4.500117,1.894198 16.650434,-3.933261 20,-3.375 3.375,0.5625 10.6875,3.375 14.5625,3.5 3.875,0.125 17.360047,-1.481308 21,-3.1875 4.528727,-2.122795 9.478409,-4.231696 14.764403,-4.694859 3.675119,-0.322017 5.433117,0.155627 7.493418,0.169805 3.883319,0.02672 9.311179,-1.718441 9.311179,-1.718441"
+           id="path3"
+           sodipodi:nodetypes="cssssssc" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#5955a8;stroke-width:3.77953;stroke-opacity:1"
+           d="M 67.838057,38.183766 C 64.346717,37.476659 44.724504,26.693281 37.299883,26.162951 29.875262,25.632621 13.435029,27.046834 8.131728,22.98097 2.8284271,18.915106 -1.2374369,19.26866 -1.2374369,19.26866"
+           id="path4" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#5955a8;stroke-width:3.77953;stroke-opacity:1"
+           d="m 38.875,26.75 c 0,0 8.125,-2.75 13.75,-2.625 C 58.25,24.25 62,19.875 67.5,20 c 5.5,0.125 11.25,-0.75 15.125,-2.5 3.875,-1.75 17,1.75 17,1.75"
+           id="path5" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#5955a8;stroke-width:3.77953;stroke-opacity:1"
+           d="m 84.49926,16.793786 c 0,0 -14.495689,-6.717514 -21.92031,-6.8942911 C 55.154329,9.7227183 39.951533,11.844039 34.825009,8.131728 29.698485,4.4194174 19.26866,-2.1213203 19.26866,-2.1213203"
+           id="path6" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#5955a8;stroke-width:3.77953;stroke-opacity:1"
+           d="m 20.506097,97.934289 c 22.45064,-5.833631 13.081475,-1.414213 22.45064,-5.833631 9.369165,-4.419417 7.778175,-6.363961 16.793786,-8.485281 9.015612,-2.12132 17.854446,-17.854446 17.854446,-17.854446"
+           id="path7" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#5955a8;stroke-width:3.77953;stroke-opacity:1"
+           d="m 47.906484,89.449008 c 0,0 -7.424621,-5.833631 -14.495689,-7.424621 C 26.339728,80.433396 21.036427,68.942911 21.036427,68.942911"
+           id="path8" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#5955a8;stroke-width:3.77953;stroke-opacity:1"
+           d="m 9.3691649,23.864854 c 0,0 9.6755341,6.83259 12.0208151,9.899495 2.298097,3.005204 4.828107,8.419605 11.623068,9.700622 2.695845,0.508233 10.120465,2.342291 10.120465,2.342291"
+           id="path9"
+           sodipodi:nodetypes="cssc" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#5955a8;stroke-width:3.77953;stroke-opacity:1"
+           d="M 21.0625,98.4375 C 13.75,97.125 7.4375,93.25 2.1875,92.5625 -3.0625,91.875 -8,94.6875 -8,94.6875"
+           id="path10" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#5955a8;stroke-width:3.77953;stroke-opacity:1"
+           d="m 92.9375,94.4375 c -6.4375,2 -12,0.75 -15.1875,-0.5 -3.1875,-1.25 -12.3125,-10.125 -16.875,-9.6875 -4.5625,0.4375 -8.125,1.9375 -8.125,1.9375"
+           id="path11" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#5955a8;stroke-width:3.77953;stroke-opacity:1"
+           d="m 79.19596,94.44295 c 6.231378,1.988738 7.890878,8.75852 9.32497,9.23658 l 0.132583,0.0442"
+           id="path12"
+           sodipodi:nodetypes="csc" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#5955a8;stroke-width:3.77953;stroke-opacity:1"
+           d="m 87.59375,2.875 c 1.78125,1.46875 6.03125,4.75 8.3125,5.09375 2.28125,0.34375 5.25,3.21875 5.25,3.21875"
+           id="path13" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#5955a8;stroke-width:3.77953;stroke-opacity:1"
+           d="m 0.48613591,10.69499 c 0,0 2.96100969,1.502602 3.88908729,3.137786 0.9280776,1.635185 2.3864854,6.850097 4.1542523,8.617864 1.7677665,1.767767 4.7287765,3.226175 4.7287765,3.226175"
+           id="path14" />
+        <path
+           style="fill:none;fill-opacity:1;stroke:#5955a8;stroke-width:3.77953;stroke-opacity:1"
+           d="m 2.5625,59.9375 c 0,0 9.262034,-2.337767 12.5625,-3.875 6.734505,-3.13668 13.953428,-13.003636 18.4375,-12.125 2.3125,0.453125 11.515625,-0.15625 11.515625,-0.15625"
+           id="path15"
+           sodipodi:nodetypes="cssc" />
+      </g>
+      <g
+         id="designBottomGenerator"
+         sodipodi:insensitive="true">
+        <use
+           height="100%"
+           width="100%"
+           id="bottom1"
+           transform="translate(-100,-100)"
+           xlink:href="#designBottom"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           id="bottom2"
+           transform="translate(0,-100)"
+           xlink:href="#designBottom"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           id="bottom3"
+           transform="translate(100,-100)"
+           xlink:href="#designBottom"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           id="bottom4"
+           transform="translate(-100)"
+           xlink:href="#designBottom"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           id="bottom5"
+           xlink:href="#designBottom"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           id="bottom6"
+           transform="translate(100)"
+           xlink:href="#designBottom"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           id="bottom7"
+           transform="translate(-100,100)"
+           xlink:href="#designBottom"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           id="bottom8"
+           transform="translate(0,100)"
+           xlink:href="#designBottom"
+           y="0"
+           x="0" />
+        <use
+           transform="translate(100,100)"
+           height="100%"
+           width="100%"
+           id="bottom9"
+           xlink:href="#designBottom"
+           y="0"
+           x="0" />
+      </g>
+      <g
+         id="designTopGenerator"
+         sodipodi:insensitive="true">
+        <use
+           height="100%"
+           width="100%"
+           id="top1"
+           transform="translate(-100,-100)"
+           xlink:href="#designTop"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           id="top2"
+           transform="translate(0,-100)"
+           xlink:href="#designTop"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           id="top3"
+           transform="translate(100,-100)"
+           xlink:href="#designTop"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           id="top4"
+           transform="translate(-100)"
+           xlink:href="#designTop"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           id="top5"
+           xlink:href="#designTop"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           id="top6"
+           transform="translate(100)"
+           xlink:href="#designTop"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           id="top7"
+           transform="translate(-100,100)"
+           xlink:href="#designTop"
+           y="0"
+           x="0" />
+        <use
+           height="100%"
+           width="100%"
+           id="top8"
+           transform="translate(0,100)"
+           xlink:href="#designTop"
+           y="0"
+           x="0" />
+        <use
+           transform="translate(100,100)"
+           height="100%"
+           width="100%"
+           id="top9"
+           xlink:href="#designTop"
+           y="0"
+           x="0" />
+      </g>
+    </g>
+  </g>
+  <inkscape:_templateinfo
+     id="_templateinfo10">
+    <inkscape:_name
+       id="_name12">Seamless Pattern</inkscape:_name>
+    <inkscape:_shortdesc
+       id="_shortdesc14">Seamless Pattern</inkscape:_shortdesc>
+    <inkscape:_keywords
+       id="_keywords16">Seamless Pattern</inkscape:_keywords>
+  </inkscape:_templateinfo>
+</svg>
