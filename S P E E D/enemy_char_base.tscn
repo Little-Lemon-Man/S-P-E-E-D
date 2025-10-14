@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bl2dho62tm7mt"]
+
+[ext_resource type="Script" uid="uid://dgy6bkn48pwey" path="res://enemy_char.gd" id="1_tf3xw"]
+[ext_resource type="Script" uid="uid://8rqx5q5v5lyj" path="res://hitbox_enemy.gd" id="2_kubv1"]
+[ext_resource type="Script" uid="uid://dy265qsq3t80t" path="res://proxy.gd" id="3_kubv1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tf3xw"]
+radius = 56.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kubv1"]
+radius = 32.0
+height = 144.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_tf3xw")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -72)
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("2_kubv1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_tf3xw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.45519e-11, -72)
+rotation = 3.14159
+shape = SubResource("CapsuleShape2D_kubv1")
+
+[node name="Knockout" type="Timer" parent="."]
+
+[node name="Flicker" type="Timer" parent="."]
+
+[node name="Proxy" type="Node2D" parent="."]
+script = ExtResource("3_kubv1")
+
+[connection signal="hit" from="." to="Proxy" method="_on_hit"]
+[connection signal="timeout" from="Knockout" to="." method="_on_knockout_timeout"]
+[connection signal="timeout" from="Flicker" to="." method="_on_flicker_timeout"]
