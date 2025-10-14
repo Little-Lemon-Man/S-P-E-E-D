@@ -1,0 +1,129 @@
+[gd_scene load_steps=10 format=3 uid="uid://qoq58vtebxll"]
+
+[ext_resource type="Script" uid="uid://exusmwqadbty" path="res://zombie.gd" id="1_dtdss"]
+[ext_resource type="Script" uid="uid://8rqx5q5v5lyj" path="res://hitbox_enemy.gd" id="2_qybkj"]
+[ext_resource type="Script" uid="uid://chk3hhhsswo5i" path="res://aaa.gd" id="3_dtdss"]
+[ext_resource type="Script" uid="uid://c4mto14eybsyk" path="res://swing_enemy_attack.gd" id="3_ykpkj"]
+[ext_resource type="Texture2D" uid="uid://buntmjf3qv0la" path="res://hand_for_armour_2.webp" id="4_mng7s"]
+[ext_resource type="Script" uid="uid://dy265qsq3t80t" path="res://proxy.gd" id="6_qybkj"]
+[ext_resource type="Texture2D" uid="uid://b3imeqp2afyiu" path="res://Chestt.webp" id="7_djscl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mauhj"]
+radius = 56.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_18kch"]
+radius = 32.0
+height = 144.0
+
+[node name="Zombie" type="CharacterBody2D"]
+script = ExtResource("1_dtdss")
+SPEED_SOFT = 50
+fric_coef = 4.0
+
+[node name="Point1" type="Node2D" parent="."]
+position = Vector2(0, -120)
+
+[node name="Area2D" type="Area2D" parent="." node_paths=PackedStringArray("body")]
+position = Vector2(0, -72)
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("2_qybkj")
+body = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_mauhj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.45519e-11, -72)
+rotation = 3.14159
+shape = SubResource("CapsuleShape2D_18kch")
+
+[node name="Attack" type="Node2D" parent="."]
+position = Vector2(0, -88)
+script = ExtResource("3_dtdss")
+
+[node name="Polygon2D" type="Polygon2D" parent="Attack"]
+texture_repeat = 1
+position = Vector2(88, -8)
+rotation = 0.236495
+scale = Vector2(0.0508354, 0.0508354)
+texture = ExtResource("4_mng7s")
+texture_scale = Vector2(-1, 1)
+polygon = PackedVector2Array(-432.618, 4.5779, -19.9509, 1.78962, 68.7639, 383.108, -518.65, 426.592)
+
+[node name="AttaHit" type="Area2D" parent="."]
+visible = false
+position = Vector2(0, -88)
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("3_ykpkj")
+knockback = 300
+damage = 10.0
+ko_time = 0.5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="AttaHit"]
+scale = Vector2(1.30035, 1.30035)
+polygon = PackedVector2Array(0, 0, 0, -104.587, 36.9131, -98.4349, 73.8262, -73.8262, 98.4349, -36.9131, 104.587, 0, 98.4349, 36.9131, 73.8262, 73.8262, 36.9131, 98.4349, 0, 104.587)
+
+[node name="Knockout" type="Timer" parent="."]
+one_shot = true
+
+[node name="Detection" type="Area2D" parent="."]
+visible = false
+position = Vector2(0, -120)
+collision_layer = 0
+collision_mask = 16384
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Detection"]
+scale = Vector2(2.84, 2.84)
+polygon = PackedVector2Array(0, 0, 157.746, -73.2394, 174.648, -47.8873, 183.099, -16.9014, 183.099, 16.9014, 174.648, 47.8873, 157.746, 73.2394)
+
+[node name="AttackTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AttackHitbox" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="See" type="Timer" parent="."]
+one_shot = true
+
+[node name="Flicker" type="Timer" parent="."]
+
+[node name="Proxy" type="Node2D" parent="."]
+script = ExtResource("6_qybkj")
+
+[node name="Collision" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="I-frames" type="Timer" parent="."]
+
+[node name="Node2D2" type="Node2D" parent="."]
+position = Vector2(0, -80)
+scale = Vector2(0.422257, 0.422257)
+
+[node name="Chestt" type="Sprite2D" parent="Node2D2"]
+position = Vector2(-20.0983, 42.6488)
+scale = Vector2(0.274043, 0.274043)
+texture = ExtResource("7_djscl")
+flip_h = true
+
+[connection signal="Swing" from="." to="Attack" method="_on_body_swing"]
+[connection signal="Swing" from="." to="AttaHit" method="_on_body_swing"]
+[connection signal="hit" from="." to="Proxy" method="_on_hit"]
+[connection signal="start" from="." to="Proxy" method="_on_start"]
+[connection signal="Swing_Has_Swung" from="Attack" to="." method="_on_swing_has_swung"]
+[connection signal="Swing_Has_Swung" from="Attack" to="AttaHit" method="_on_swing_has_swung"]
+[connection signal="Swing_Has_Swung" from="Attack" to="AttaHit" method="_on_attack_swing_has_swung"]
+[connection signal="timeout" from="Knockout" to="." method="_on_knockout_timeout"]
+[connection signal="body_exited" from="Detection" to="." method="_on_detection_body_exited"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="AttackHitbox" to="." method="_on_attack_hitbox_timeout"]
+[connection signal="timeout" from="AttackHitbox" to="AttaHit" method="_on_attack_hitbox_timeout"]
+[connection signal="timeout" from="See" to="." method="_on_see_timeout"]
+[connection signal="timeout" from="Flicker" to="." method="_on_flicker_timeout"]
+[connection signal="hit" from="Proxy" to="." method="_on_proxy_hit"]
+[connection signal="start" from="Proxy" to="." method="_on_proxy_start"]
+[connection signal="timeout" from="Collision" to="." method="_on_collision_timeout"]
+[connection signal="timeout" from="I-frames" to="Area2D" method="_on_iframes_timeout"]
