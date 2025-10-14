@@ -14,21 +14,24 @@ var fly_speed = 800
 var last_edge = 1
 var dead = false
 @onready var grab_hitbox = $"Node2D/Node2D2/Mouth Path/PathFollow2D/Node2D/GrabFireHitbox"
+##Alternate attack cycle
 #for attack, 1 is fly_breath, 2 is fly_low, 3 is under_breath
 #for edge, 1 is coming from the left and -1 is coming from the right, 
 #
-var cycle = [[1, -1], [1, 1], [2, -1], [3, 1], [1, 1], [3, -1]]
+#var cycle = [[1, -1], [1, 1], [2, -1], [3, 1], [1, 1], [3, -1]]
 #[attack, edge]
 
-
+var edge = 1
 
 var current_attack = "null"
 
 
 
 func _process(delta: float) -> void:
-	var i = cycle[0][0]
-	var edge = cycle[0][1]
+	#var i = cycle[0][0]
+	#var edge = cycle[0][1]
+	var i = (randi() % 2) + 1
+	edge = -edge
 	if current_attack == "null":
 		$Node2D.scale.x = edge
 		if i == 1:
@@ -38,8 +41,8 @@ func _process(delta: float) -> void:
 		elif i == 3:
 			_grab_breath(edge)
 		print(current_attack + ' start, ' + str(edge))
-		cycle.append(cycle[0])
-		cycle.remove_at(0)
+#		cycle.append(cycle[0])
+#		cycle.remove_at(0)
 
 func _ready() -> void:
 	fly_point_from_centre = arena_centre-fly_point
